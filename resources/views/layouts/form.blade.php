@@ -16,6 +16,8 @@
   <link href="{{ asset('js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{ asset('css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
+  <!-- Modern Auth Design -->
+  <link href="{{ asset('css/auth-modern.css') }}" rel="stylesheet" />
 </head>
 
 <body class="bg-default">
@@ -67,21 +69,22 @@
       </div>
     </nav>
     <!-- Header -->
-    <div class="header bg-gradient-primary py-6 py-lg-7">
-      <div class="container">
-        <div class="header-body text-center mb-7">
-          <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">@yield('title', 'Bienvenidos')</h1>
-              
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="header bg-gradient-primary py-4">
       <div class="separator separator-bottom separator-skew zindex-100">
         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
         </svg>
+      </div>
+    </div>
+    
+    <!-- Welcome Message -->
+    <div class="welcome-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1 class="text-white welcome-title">¡Bienvenido!</h1>
+          </div>
+        </div>
       </div>
     </div>
     @yield('content')

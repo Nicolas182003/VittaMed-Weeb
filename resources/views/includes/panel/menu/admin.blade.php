@@ -13,13 +13,3 @@
         <i class="fas fa-stethoscope text-info"></i> Médicos
     </a>
 </li>
-<li class="nav-item">
-    <a class="nav-link " href="/pacientes">
-        <i class="fas fa-bed text-warning"></i> Pacientes
-    </a>
-</li>
-<li class="nav-item">
-   <a class="nav-link " href="/miscitas">
-       <i class="fas fa-clock text-info"></i> Citas médicas
-   </a>
-</li>
