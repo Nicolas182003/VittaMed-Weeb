@@ -1,10 +1,15 @@
-<li class="nav-item">
-    <a class="nav-link " href="/reservarcitas/create">
-        <i class="ni ni-calendar-grid-58 text-primary"></i> Reservar cita
+<li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('home') ? 'active' : '' }}" href="/home">
+        <i class="fas fa-home"></i> Inicio
     </a>
 </li>
-<li class="nav-item">
-    <a class="nav-link " href="/miscitas">
-        <i class="fas fa-clock text-info"></i> Mis citas
+<li class="nav-item {{ request()->is('reservarcitas*') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('reservarcitas*') ? 'active' : '' }}" href="/reservarcitas/create">
+        <i class="fas fa-calendar-plus"></i> Reservar Cita
+    </a>
+</li>
+<li class="nav-item {{ request()->is('miscitas*') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('miscitas*') ? 'active' : '' }}" href="/miscitas">
+        <i class="fas fa-file-medical"></i> Mis Citas
     </a>
 </li>

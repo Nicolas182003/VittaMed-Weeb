@@ -45,12 +45,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/reservarcitas/create', [App\Http\Controllers\AppointmentController::class, 'create']);
     Route::post('/reservarcitas', [App\Http\Controllers\AppointmentController::class, 'store']);
     Route::get('/miscitas', [App\Http\Controllers\AppointmentController::class, 'index']);
-    Route::get('/miscitas/{appointment}', [App\Http\Controllers\AppointmentController::class, 'show']);
+    
+    // Rutas específicas primero
+    Route::get('/miscitas/{appointment}/cancel', [App\Http\Controllers\AppointmentController::class, 'formCancel']);
     Route::post('/miscitas/{appointment}/cancel', [App\Http\Controllers\AppointmentController::class, 'cancel']);
     Route::post('/miscitas/{appointment}/confirm', [App\Http\Controllers\AppointmentController::class, 'confirm']);
-
-    Route::get('/miscitas/{appointment}/cancel', [App\Http\Controllers\AppointmentController::class, 'formCancel']);
     
-
+    // Ruta genérica al final
+    Route::get('/miscitas/{appointment}', [App\Http\Controllers\AppointmentController::class, 'show']);
 
 });

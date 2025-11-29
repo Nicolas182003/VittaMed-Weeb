@@ -122,9 +122,17 @@ class DoctorController extends Controller
     {
         $user = User::doctors()->findOrFail($id);
         $doctorName = $user->name;
+        
+        // Eliminar los horarios asociados al doctor
+        $user->horarios()->delete();
+        
+        // Desvincular especialidades
+        $user->specialties()->detach();
+        
+        // Eliminar el doctor
         $user->delete();
 
-        $notification = "El médico $doctorName se elimino correctamente";
+        $notification = "El médico $doctorName se eliminó correctamente";
 
         return redirect('/medicos')->with(compact('notification'));
     }

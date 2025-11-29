@@ -1,10 +1,15 @@
-<li class="nav-item">
-    <a class="nav-link " href="/horario">
-        <i class="ni ni-calendar-grid-58 text-primary"></i> Gestionar horario
+<li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('home') ? 'active' : '' }}" href="/home">
+        <i class="fas fa-chart-bar"></i> Dashboard
     </a>
 </li>
-<li class="nav-item">
-    <a class="nav-link " href="/miscitas">
-        <i class="fas fa-clock text-info"></i> Mis citas
+<li class="nav-item {{ request()->is('horario*') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('horario*') ? 'active' : '' }}" href="/horario">
+        <i class="fas fa-calendar-alt"></i> Mi Horario
+    </a>
+</li>
+<li class="nav-item {{ request()->is('miscitas*') ? 'active' : '' }}">
+    <a class="nav-link {{ request()->is('miscitas*') ? 'active' : '' }}" href="/miscitas">
+        <i class="fas fa-notes-medical"></i> Mis Citas
     </a>
 </li>

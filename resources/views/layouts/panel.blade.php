@@ -16,12 +16,14 @@
   <link href="{{ asset('js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{ asset('css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
+  <!-- Modern Panel Design -->
+  <link href="{{ asset('css/panel-modern.css') }}" rel="stylesheet" />
 
   @yield('styles')
 
 </head>
 
-<body class="">
+<body class="" data-role="{{ auth()->user()->role }}">
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
@@ -85,8 +87,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
-        <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+        <!-- Visual Brand Element -->
+        <div class="navbar-brand-wrapper d-none d-lg-flex align-items-center">
+          <div class="brand-icon-wrapper">
+            <i class="fas fa-heartbeat brand-pulse-icon"></i>
+          </div>
+          <div class="brand-divider"></div>
+          <span class="brand-text">VittaMed</span>
+        </div>
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex ml-auto"> 
           <li class="nav-item dropdown">
@@ -107,10 +115,10 @@
     </nav>
     <!-- End Navbar -->
     <!-- Header -->
-    <div class="header bg-gradient-primary pb-8 pt-4 pt-md-6">
+    <div class="header bg-gradient-primary pb-4 pt-3">
 
     </div>
-    <div class="container-fluid mt--7">
+    <div class="container-fluid" style="margin-top: 2.5rem; padding-left: 2rem; padding-right: 2rem;">
       @yield('content')
       <!-- Footer -->
       @include('includes.panel.footer')
@@ -134,6 +142,16 @@
         token: "ee6fab19c5a04ac1a32a645abde4613a",
         application: "argon-dashboard-free"
       });
+      
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar-main');
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
 </body>
 

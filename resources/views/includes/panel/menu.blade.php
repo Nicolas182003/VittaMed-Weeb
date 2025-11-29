@@ -28,14 +28,14 @@
     <h6 class="navbar-heading text-muted">Reportes</h6>
     <!-- Navigation -->
     <ul class="navbar-nav mb-md-3">
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/reportes/citas/line') }}">
-                <i class="ni ni-books text-default"></i> Citas 
+        <li class="nav-item {{ request()->is('reportes/citas*') ? 'active' : '' }}">
+            <a class="nav-link {{ request()->is('reportes/citas*') ? 'active' : '' }}" href="{{ url('/reportes/citas/line') }}">
+                <i class="fas fa-chart-area"></i> Citas 
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/reportes/doctors/column') }}">
-                <i class="ni ni-chart-bar-32 text-warning"></i> Desempeño Médico
+        <li class="nav-item {{ request()->is('reportes/doctors*') ? 'active' : '' }}">
+            <a class="nav-link {{ request()->is('reportes/doctors*') ? 'active' : '' }}" href="{{ url('/reportes/doctors/column') }}">
+                <i class="fas fa-chart-bar"></i> Desempeño Médico
             </a>
         </li>
         

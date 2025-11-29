@@ -37,8 +37,8 @@ class AppointmentController extends Controller
             $oldAppointments = Appointment::all()
             ->whereIn('status', ['Atendida','Cancelada'])
             ->where('doctor_id', auth()->id());
-        }elseif($role == 'paciente'){
-            //Pacientes
+        }else{
+            //Pacientes (incluye usuarios sin rol asignado)
             $confirmedAppointments = Appointment::all()
             ->where('status', 'Confirmada')
             ->where('patient_id', auth()->id());

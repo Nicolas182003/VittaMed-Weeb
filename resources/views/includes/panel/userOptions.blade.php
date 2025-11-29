@@ -6,17 +6,9 @@
         <i class="ni ni-single-02"></i>
         <span>Mi perfil</span>
     </a>
-    <a href="#" class="dropdown-item">
-        <i class="ni ni-settings-gear-65"></i>
-        <span>Configuración</span>
-    </a>
-    <a href="#" class="dropdown-item">
+    <a href="{{ url('/miscitas') }}" class="dropdown-item">
         <i class="ni ni-calendar-grid-58"></i>
         <span>Mis citas</span>
-    </a>
-    <a href="#" class="dropdown-item">
-        <i class="ni ni-support-16"></i>
-        <span>Ayuda</span>
     </a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('formLogout').submit();">
